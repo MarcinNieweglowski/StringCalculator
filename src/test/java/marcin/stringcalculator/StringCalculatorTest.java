@@ -54,7 +54,7 @@ public class StringCalculatorTest {
 	}
 
 	@Test
-	public void addShouldAddNumbersSeparatedByDelimetersWithDifferentLength() throws Exception {
+	public void addShouldAddNumbersSeparatedBySeparatorsWithDifferentLength() throws Exception {
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 10, this.calculator.add("//%%%;;;;;;**\n1%%%2**3;;;;;;4"));
 	}
 
@@ -64,25 +64,25 @@ public class StringCalculatorTest {
 	}
 
 	@Test(expected = Test.None.class)
-	public void addShouldNotFailWhenWhitespaceIsTheDelimeter() throws Exception {
+	public void addShouldNotFailWhenWhitespaceIsTheSeparator() throws Exception {
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 60, this.calculator.add("//      \n10      20      30"));
 	}
 
 	@Test(expected = Test.None.class)
-	public void addShouldNotFailWhenNewLineOrTabIsTheSpecifiedDelimeter() throws Exception {
+	public void addShouldNotFailWhenNewLineOrTabIsTheSpecifiedSeparator() throws Exception {
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 60, this.calculator.add("//\n\n10\n20\n30"));
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 60, this.calculator.add("//\t\n10\t20\t30"));
 	}
 
 	@Test
-	public void addShouldAddNumbersWithDifferentDelimeters() throws Exception {
+	public void addShouldAddNumbersWithDifferentSeparators() throws Exception {
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 6, this.calculator.add("//##;;\n1##2;;3"));
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 6, this.calculator.add("//;*\n1;2*3"));
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 41, this.calculator.add("//;* \n15;20*5 1"));
 	}
 
 	@Test
-	public void addShouldAddNumbersWithSameDelimeterButDifferentLengthUsed() throws Exception {
+	public void addShouldAddNumbersWithSameSeparatorButDifferentLengthUsed() throws Exception {
 		Assert.assertEquals(EXPECTED_THE_SUM_TO_BE_EQUAL, 10,
 				this.calculator.add("//%%%;;;;;;%%%%%%%%\n1%%%2%%%%%%%%3;;;;;;4"));
 	}

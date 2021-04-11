@@ -50,7 +50,7 @@ public class StringCalculator {
 
 	private int calcuateSumOfValidNumbers(List<Integer> list) {
 		LOGGER.debug("Calculating the sum, values above 1000 are considered invalid");
-		return IntStream.range(0, list.size()).map(index -> list.get(index)).filter(value -> value < MAX_ALLOWED_VALUE)
+		return IntStream.range(0, list.size()).map(index -> list.get(index)).filter(value -> value <= MAX_ALLOWED_VALUE)
 				.sum();
 	}
 
@@ -83,7 +83,7 @@ public class StringCalculator {
 		return str == null || str.trim().length() == 0;
 	}
 
-	private static final int MAX_ALLOWED_VALUE = 1001;
+	private static final int MAX_ALLOWED_VALUE = 1000;
 
 	private static final String DEFAULT_SEPARATOR = ",";
 
